@@ -5,6 +5,8 @@ const User = require('../model/userModel');
 const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const Email = require('../utils/email');
+require('dotenv').config()
+
 
 // Generate Token ///////////////////////////////////////////////////////////////////////////////////////////
 const signToken = (id) =>
@@ -51,9 +53,9 @@ exports.signUp = catchAsync(async (req, res, next) => {
     role: req.body.role,
   });
 
-  const url = `${req.protocol}://${req.get('host')}/me`;
+  // const url = `${req.protocol}://${req.get('host')}/me`;
   // console.log(url);
-  await new Email(newUser, url).sendWelcome();
+  // await new Email(newUser, url).sendWelcome();
 
   // sign(payload, secret, options)
   createSendToken(newUser, 201, req, res);

@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
-// require('./.env')
+require('dotenv').config()
 
 // UNCAUGHT EXCEPTION(Errors occured in synchronous code, but never handles)
 // Should be defined in the top-level
